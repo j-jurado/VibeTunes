@@ -19,7 +19,7 @@ function Login() {
     }, [])
 
     const spotifyAuthLogin = () => {
-        const AUTH_ENDPOINT = process.env.REACT_APP_AUTH_ENDPOINT;
+        const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
         const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
         const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
 
