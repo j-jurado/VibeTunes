@@ -7,15 +7,17 @@ function Home() {
 
     return (
         <div className="home">
-        <h1>VibeTunes</h1>
+        <div className="title">
+            <h1>VibeTunes</h1>
+        </div>
         <p>Home Page</p>
-        <div>
+        <div className="user">
             <input
             type="text"
             placeholder="Username"
             />
         </div>
-        <div>
+        <div className="pass">
             <input
             type="text"
             placeholder="Password"

@@ -1,3 +1,31 @@
+.home {
+  padding: 30px;
+  text-align: center;
+  background: #580377;
+  min-height: 100vh;  
+  color: white;
+  font-size: 30px;
+}
+title ~ h1{
+  border: solid green 6px;
+}
+button{
+  width: 10%;
+  background: green;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 3px solid green;
+  box-sizing: border-box;
+  border-radius:30px;
+}
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 3px solid green;
+  box-sizing: border-box;
+  border-radius:30px;
+}
 .App {
   text-align: center;
 }
