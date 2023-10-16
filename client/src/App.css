@@ -1,19 +1,70 @@
 .home {
-  padding: 30px;
+  padding-top: 30px;
   text-align: center;
   background: #580377;
-  min-height: 100vh;  
+  min-height: 100vh;
   color: white;
-  font-size: 30px;
+  caret-color: transparent;
+  align-items: center;
+  align-self: center;
 }
-button{
-  width: 10%;
-  background: green;
-  padding: 12px 20px;
+
+#trees {
+  position: fixed;
+  bottom: 0px;
+  height: 100px;
+  padding: 0px;
+  display: block;
+  align-content: normal;
+  border: 0px solid rgb(0, 0, 0);
+  overflow: hidden;
+}
+
+
+.site-setting {
+  width: 40px;
+  height: 40px;
+  left: 40px;
+  position: relative;
+
+}
+
+.site-setting:hover {
+  animation: rotation 6s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.site-logo {
+  position: relative;
+}
+
+button {
+  position: relative;
+  width: 12%;
+  background: rgb(161, 229, 79);
+  padding: 5px 27px;
   margin: 8px 0;
-  border: 3px solid rgb(0, 0, 0);
+  border: 5px solid rgb(0, 0, 0);
   box-sizing: border-box;
-  border-radius:10px;
+  border-radius: 10px;
+  border-style: ridge;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+  padding-top: 1%;
+}
+
+button:hover {
+  background-color: rgb(119, 167, 61);
+  transition: 0.3s;
 }
 
 .App {
@@ -50,6 +101,7 @@ button{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
