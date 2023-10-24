@@ -22,11 +22,19 @@ function Login() {
         const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
         const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
         const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
+        const PERMISSIONS = [
+            'user-follow-read',
+            'user-read-private',
+            'user-read-email',
+            'playlist-modify-public',
+            'playlist-modify-private'
+        ]
 
         const AUTH_LINK = 
             AUTH_ENDPOINT + "?client_id=" + 
-            CLIENT_ID + "&redirect_uri=" + 
-            REDIRECT_URI + "&response_type=token";
+            CLIENT_ID + "&redirect_uri=" +  
+            REDIRECT_URI + "&response_type=token" +
+            "&scope=" + PERMISSIONS.join('%20');
 
         window.location = AUTH_LINK;
     }
