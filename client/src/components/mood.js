@@ -2,22 +2,23 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import moods from '../util/moods';
+import '../App.css';
 
 let userID = "";
 let userEmail = "";
 let playlistID = "";
 let currentMood = "";
+let playlistLink = "";
 let currentPlaylist = [];
 
 function Mood() {
   const [token, setToken] = useState(window.localStorage.getItem("token"));
   const [moodInput, setMoodInput] = useState('');
   const [invalidMood, setInvalidMood] = useState(false);
-  // const [playlistID, setPlaylistID] = useState('');
-
+  const [recentMoods, setRecentMoods] = useState([]);
+  const [validPlaylist, setValidPlaylist] = useState(false);
 
   useEffect(() => {
-    // const token = window.localStorage.getItem("token");
     setToken(window.localStorage.getItem("token"));
     if(!token) {
         logout();
@@ -44,6 +45,7 @@ function Mood() {
     }
 
     setInvalidMood(false);
+    setRecentMoods([moodInput, ...recentMoods]);
     currentMood = moodInput;
     return mood;
   }
@@ -62,11 +64,6 @@ function Mood() {
       return response.json();
     })
     .then((data) => {
-      // console.log(data);
-      // console.log(data.id);
-      // console.log(data.email);
-      // await setUserID(data.id);
-      // await setUserEmail(data.email);
       userID = data.id;
       userEmail = data.email;
     })
@@ -119,11 +116,6 @@ function Mood() {
 
   // Generates list of tracks
   async function generateTracks(mood) {
-    // const token = window.localStorage.getItem("token");
-
-    // const mood = parseMood();
-    // if (!mood) return;
-    // console.log("Generating songs for mood: " + mood);
     currentPlaylist = [];
     const artists = await getArtists();
 
@@ -152,10 +144,6 @@ function Mood() {
     })
     .then((data) => {
       data.tracks.forEach(song => {
-        // retStr = song.name + ": ";
-        // song.artists.forEach(artist => {
-        //   retStr += artist.name + " ";
-        // })
         currentPlaylist.push("spotify:track:" + song.id);
         if (songIDs.length == 0) {
           songIDs = song.id;
@@ -173,7 +161,7 @@ function Mood() {
     const mood = parseMood();
     if(!mood) return;
 
-    const playlistName = "VibeTunes: " + currentMood.toUpperCase();
+    const playlistName = "VibeTunes Mood Playlist";
     console.log("current playlistID: " + playlistID);
 
     // Creates a VibeTunes playlist if it doesn't already exist
@@ -196,8 +184,7 @@ function Mood() {
       })
       .then((data) => {
         playlistID = data.id;
-        // setPlaylistID(data.id);
-        console.log(playlistID);
+        console.log("PlaylistID: " + playlistID);
       })
 
     } else {
@@ -241,51 +228,20 @@ function Mood() {
       })
     })
 
-    // if (currentPlaylist.length != 0) {
-    //   await fetch(EDIT_PLAYLIST_ENDPOINT, {
-    //     method: 'DELETE',
-    //     headers: {
-    //       'Authorization': 'Bearer ' + token
-    //     },
-    //     body: JSON.stringify({
-    //       tracks: currentPlaylist.map(uri => ({uri})),
-    //     })
-    //   })
-    // } else {
-    //   await generateTracks(mood);
-    //   await fetch(EDIT_PLAYLIST_ENDPOINT, {
-    //     method: 'POST',
-    //     headers: {
-    //       'Authorization': 'Bearer ' + token
-    //     },
-    //     body: JSON.stringify({
-    //       tracks: currentPlaylist.map(uri => ({uri})),
-    //     })
-    //   })
-    // }
+    playlistLink = 
+      "https://open.spotify.com/embed/playlist/" + 
+      playlistID +
+      "?utm_source=generator";
 
-    // const songIDs = await generateTracks(mood);
-
-      
-
-
-
-
-
-
-
-
-
-
-    // console.log(songIDs);
-    console.log(userID);
-    console.log(userEmail);
+    if (validPlaylist) {
+      document.getElementById('Player').src = document.getElementById('Player').src;
+    }
+    setValidPlaylist(true);
   }
   
   return (
     <div className="mood">
       <h1>VibeTunes</h1>
-      <p>Mood Page</p>
       <button onClick={logout}>Logout</button>
       <div>
         <input
@@ -297,6 +253,33 @@ function Mood() {
           {invalidMood ? <p>Invalid Mood!</p> : null}
         </div>
         <button onClick={buildPlaylist}>Generate</button>
+        <div style={{
+          width: '500px',
+          height: '500px'
+        }}>
+          {validPlaylist ? 
+            <iframe
+              id="Player"
+              src={playlistLink}
+              width="500px"
+              height="500px"
+              frameBorder="0"
+              allowFullScreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+            </iframe>
+          : 
+            <div class="PlayerNotLoaded"></div>
+          }
+        </div>
+        <div>
+          <p>Recent Moods</p>
+          {/* Shows the last 4 moods */}
+          {recentMoods.slice(0, 4).map((mood) => (
+            <p>{mood}</p>
+          ))}
+        </div>
+
       </div>
     </div>
   );
