@@ -36,20 +36,12 @@ function Login() {
 
     return (
         <div className="home">
-            <div class="site-setting"><img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163510783460786266/126472.png?ex=653fd6db&is=652d61db&hm=6318973262d3e03f4589cd489dae0a721fc96a3b97bc42190c706308a2450706&" width="40" height="40" alt="settings"></img></div>
-            <div class="site-logo"><img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163502858201747577/vibetunes_prev_ui.png?ex=653fcf7a&is=652d5a7a&hm=796cac0e96f6cb8ca866d9fb259a8bed5c67c82042191e5e08d1e65ae26e1036&" alt="logo"></img></div>
+            <div class="site-setting"><img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163510783460786266/126472.png?ex=653fd6db&is=652d61db&hm=6318973262d3e03f4589cd489dae0a721fc96a3b97bc42190c706308a2450706&" width="90%" height="90%" alt="settings"></img></div>
+            <div class="site-logo"><img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163502858201747577/vibetunes_prev_ui.png?ex=653fcf7a&is=652d5a7a&hm=796cac0e96f6cb8ca866d9fb259a8bed5c67c82042191e5e08d1e65ae26e1036&" width="35%" height="35%" alt="mainlogo"></img></div>
             <button onClick={spotifyAuthLogin}>
                 Login With Spotify
-                <img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163505951542890658/spotify_logo_prev_ui.png?ex=653fd25b&is=652d5d5b&hm=b034d7d543c35be5c7770a0988b51bfeee3c7a0d1ff40e53f4ca7f7d768a9b77&" width="50" height="50"></img>
+                <img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163505951542890658/spotify_logo_prev_ui.png?ex=653fd25b&is=652d5d5b&hm=b034d7d543c35be5c7770a0988b51bfeee3c7a0d1ff40e53f4ca7f7d768a9b77&" width="50%" height="50%"></img>
             </button>
-            <div id="trees"> <img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163535134453158091/trees_prev_ui.png?ex=653fed89&is=652d7889&hm=a70c351f5226d1ddab0151b3cf03211b66a05df72d52b34416ca488c957234f1&" height="100px">
-            </img><img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163535134453158091/trees_prev_ui.png?ex=653fed89&is=652d7889&hm=a70c351f5226d1ddab0151b3cf03211b66a05df72d52b34416ca488c957234f1&" height="100px"></img>
-                <img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163535134453158091/trees_prev_ui.png?ex=653fed89&is=652d7889&hm=a70c351f5226d1ddab0151b3cf03211b66a05df72d52b34416ca488c957234f1&" height="100px"></img>
-                <img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163535134453158091/trees_prev_ui.png?ex=653fed89&is=652d7889&hm=a70c351f5226d1ddab0151b3cf03211b66a05df72d52b34416ca488c957234f1&" height="100px"></img>
-                <img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163535134453158091/trees_prev_ui.png?ex=653fed89&is=652d7889&hm=a70c351f5226d1ddab0151b3cf03211b66a05df72d52b34416ca488c957234f1&" height="100px"></img>
-                <img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163535134453158091/trees_prev_ui.png?ex=653fed89&is=652d7889&hm=a70c351f5226d1ddab0151b3cf03211b66a05df72d52b34416ca488c957234f1&" height="100px"></img>
-                <img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163535134453158091/trees_prev_ui.png?ex=653fed89&is=652d7889&hm=a70c351f5226d1ddab0151b3cf03211b66a05df72d52b34416ca488c957234f1&" height="100px"></img>
-            </div>
         </div>
 
     );
