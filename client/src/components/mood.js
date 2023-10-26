@@ -321,57 +321,82 @@ function Mood() {
         <div key={index} style={style} className={`music-note-${index}`} />
       ))}
       <div className="mood">
-        <h1>VibeTunes</h1>
-        <button className="mood-button" onClick={logout}>Logout</button>
+        <div className="logout-container">
+          <button className="logout" onClick={logout}>Logout</button>
+        </div>
+        <h1 className="logo-h1">VibeTunes</h1>
         <div className="container">
           <div className="column">
-            <h2>Mood</h2>
-            <input
-              className="input-responsive"
-              type="text"
-              value={moodInput}
-              placeholder="Enter Mood"
-              onChange={(e) => setMoodInput(e.target.value.toLowerCase())}
-            />
-            <button className="mood-button" onClick={buildPlaylist}>Generate</button>
-            {/* Following code block moved here */}
-            <div>
-              {invalidMood ? <p>Invalid Mood!</p> : null}
+            <div className="mood-colum">
+              <h2 className="mood-h2">Mood</h2>
+              <div className="mood-selection">
+                <div className="input-center">
+                  <input
+                    className="input-responsive"
+                    type="text"
+                    value={moodInput}
+                    placeholder="Enter Mood"
+                    onChange={(e) => setMoodInput(e.target.value.toLowerCase())}
+                  />
+                  <div>
+                    {invalidMood ? <p style={{color: 'red'}}>Invalid Mood!</p> : null}
+                  </div>
+                </div>
+                <div className="center-button">
+                  <button className="mood-button" onClick={buildPlaylist}>Generate</button>
+                </div>
+              </div>
+              <h2 className="mood-h2">Recent Moods</h2>
+              <div className="friends-container">
+                <div className="friends-border">
+                  <div className="input-center">
+                  {recentMoods.slice(0, 4).map((mood, index) => (
+                      <p className="p-friends"key={index}>{mood}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div className="column">
             <div style={{ width: '100px', height: '100px' }}>
               {validPlaylist
                 ? <iframe
                   id="Player"
                   src={playlistLink}
                   width="500px"
-                  height="500px"
+                  height="575px"
                   frameBorder="0"
                   allowFullScreen=""
                   allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy">
                 </iframe>
-                : <div className="PlayerNotLoaded"></div>
+                : <div className="PlayerNotLoaded"><p className="p-player">Generate A Playlist!</p></div>
               }
             </div>
           </div>
           <div className="column">
-            <h2>Recent Moods</h2>
-            {recentMoods.slice(0, 4).map((mood, index) => (
-              <p key={index}>{mood}</p>
-            ))}
-          </div>
-          <div className="column">
-            <h2>Friend List</h2>
-            <div className="friends-list">
-              {friends.slice(0, 4).map((friend, index) => (
-                <p
-                  key={index}
-                  onClick={() => handleFriendClick(friend)}
-                  style={{ color: friend === selectedFriend ? 'red' : 'black' }}>{friend}</p>
-              ))}
+            <h2 className="mood-h2">Friend List</h2>
+            <div className="friends-container">
+              <div className="friends-border">
+                <div className="friends-list">
+                  {friends.slice(0, 4).map((friend, index) => (
+                    <p className="p-friends"
+                      key={index}
+                      onClick={() => handleFriendClick(friend)}
+                      style={{ color: friend === selectedFriend ? '#adf542' : 'white' }}>{friend}</p>
+                  ))}
+                </div>
+              </div>
             </div>
-            {/* Following input field placed here */}
-            <div>
+            <div className="center-button">
+              <button className="share-button"
+                  onClick={handleShareClick}
+                  disabled={selectedFriend !== '' && playlistID !== '' ? false : true}
+                >Share Playlist</button>
+            </div>
+            <h2 className="mood-h2">Add Friend</h2>
+            <div className="input-center">
               <input
                 className="input-responsive"
                 type="text"
@@ -379,13 +404,9 @@ function Mood() {
                 value={friendName}
                 onChange={handleNameChange}
               />
-              <button className="mood-button" onClick={handleAddFriend}>Add</button>
             </div>
-            <div>
-              <button className="mood-button"
-                onClick={handleShareClick}
-                disabled={selectedFriend !== '' && playlistID !== '' ? false : true}
-              >Share Playlist</button>
+            <div className="center-button">
+              <button className="mood-button" onClick={handleAddFriend}>Add</button>
             </div>
           </div>
         </div>

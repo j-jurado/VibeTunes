@@ -25,7 +25,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #6e4eaa;
+  background-color: #580377;
   font-family: 'Poppins', sans-serif;
   color: white;
   min-height: 100vh;
@@ -48,8 +48,9 @@
 }
 
 .column {
+  width: 500px;
   flex: 1;
-  padding: calc(5em + 1vw);
+  padding: calc(0.5em + 1vw);
 }
 
 .mood button {
@@ -118,6 +119,43 @@ button {
   padding-top: 1%;
 }
 
+.logout {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background: rgb(182, 191, 197);
+  padding: 0% 2%;
+  border: 3px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: smooth;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: calc(0.2em + 1vw);
+  padding-top: 0%;
+  margin: 0px;
+}
+
+.share-button {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  position: relative;
+  width: 250px;
+  background: rgb(182, 191, 197);
+  padding: 0% 2%;
+  border: 3px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: smooth;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: calc(0.5em + 1vw);
+  padding-top: 0%;
+  margin-top: 10px
+}
+
 .mood-button {
   display: flex;
   align-items: center;
@@ -133,6 +171,7 @@ button {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: calc(0.5em + 1vw);
   padding-top: 0%;
+  margin: 0px;
 }
 
 
@@ -181,7 +220,10 @@ button:hover {
 }
 
 .input-responsive {
-  width: calc(5em + 6vw);
+  width: 250px;
+  height: 30px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 .App-link {
@@ -221,14 +263,79 @@ button:hover {
 }
 
 .friends-list {
-  border: 1px solid #444;
-  background-color: #b293e4;
-  border-radius: 20px;
-  padding-left: 20px;
-  width: 100%;
+  text-align: center;
+}
+
+.logo-h1 {
+  color: #adf542;
+  margin: 0px;
+}
+.mood-h2 {
+  color: #adf542;
+
+  text-align: center;
+  margin: 10px;
+}
+
+.input-center {
+  text-align: center;
+}
+
+.center-button {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  max-width: 100%;
-  margin: 10% auto;
+  align-items: center; 
+}
+
+.friends-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+}
+
+.friends-border {
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: #b293e4;
+}
+
+.logout-container {
+  width:100%; 
+}
+
+.recent-h2 {
+  text-align: center;
+  margin-top: 30px
+}
+
+.mood-selection {
+  height: 150px;
+}
+
+.PlayerNotLoaded {
+  text-align: center;
+  vertical-align: middle;
+  width: 500px;
+  height: 575px;
+  background-color: #b293e4;
+  border-radius: 10px;
+  display: table;
+  font-size: 500;
+
+}
+
+.p-player {
+  color: #adf542;
+  font-size: 30px;
+  font-weight: bold;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.p-friends {
+  margin-top: 25px;
+  font-size: 30px;
 }
