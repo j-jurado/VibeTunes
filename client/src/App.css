@@ -1,31 +1,68 @@
 .home {
-  padding: 30px;
-  text-align: center;
+  padding-top: 0%;
+  padding-bottom: 0%;
   background: #580377;
-  min-height: 100vh;  
+  text-align: center;
+  background-image: url("https://cdn.discordapp.com/attachments/1080566050132865074/1163597931966894171/backgroundtrees.png?ex=65402805&is=652db305&hm=60dfbdc700b05f7c8cd1e9aae260b283191c3b8cc6aa86abe24706867c4c8faa&");
+  min-height: 100vh;
+  background-size: 25% 100%;
   color: white;
-  font-size: 30px;
+  caret-color: transparent;
+  background-repeat: repeat-x;
+  align-items: center;
+  background-position: right top;
+  align-self: center;
 }
-title ~ h1{
-  border: solid green 6px;
+
+.site-setting {
+  width: 3%;
+  height: 3%;
+  left: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  position: relative;
+
 }
-button{
+
+.site-setting:hover {
+  animation: rotation 6s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.site-logo {
+  position: relative;
+}
+
+button {
+  position: relative;
   width: 10%;
-  background: green;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border: 3px solid green;
+  background: rgb(161, 229, 79);
+  padding: 0 1%;
+  margin: 0 0;
+  border: 5px solid rgb(0, 0, 0);
   box-sizing: border-box;
-  border-radius:30px;
+  border-radius: 30%;
+  border-style: ridge;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 100%;
+  padding-top: 1%;
+
 }
-input[type=text], input[type=password] {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border: 3px solid green;
-  box-sizing: border-box;
-  border-radius:30px;
+
+button:hover {
+  background-color: rgb(119, 167, 61);
+  transition: 0.3s;
 }
+
 .App {
   text-align: center;
 }
@@ -60,6 +97,7 @@ input[type=text], input[type=password] {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
