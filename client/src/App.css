@@ -1,31 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
 .home {
-  padding: 30px;
-  text-align: center;
+  padding-top: 0%;
+  padding-bottom: 0%;
   background: #580377;
-  min-height: 100vh;  
+  text-align: center;
+  background-image: url("https://cdn.discordapp.com/attachments/1080566050132865074/1163598755472355509/backgroundtrees.png?ex=65496349&is=6536ee49&hm=b2bdd9dbfd75b923a843d083202e859e653c46ea0bfeaca6bed260a8c2d90b3a&");
+  min-height: 100vh;
+  background-size: auto 100%;
   color: white;
-  font-size: 30px;
+  caret-color: transparent;
+  background-repeat: repeat-x;
 }
-title ~ h1{
-  border: solid green 6px;
+
+.container {
+  display: flex;
 }
-button{
-  width: 10%;
-  background: green;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border: 3px solid green;
+
+.app-container {
+  caret-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #580377;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  min-height: 100vh;
+
+}
+
+.mood {
+  z-index: 2;
+  font-family: 'Comfortaa', cursive;
+}
+
+.mood h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: calc(5em + 1vw);
+}
+
+.mood h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: calc(2em + 1vw);
+}
+
+.column {
+  width: 500px;
+  flex: 1;
+  padding: calc(0.5em + 1vw);
+}
+
+.mood button {
+  font-family: 'Poppins', sans-serif;
+}
+
+.mood p {
+  font-family: 'Comfortaa', cursive;
+}
+
+h1,
+h2,
+button,
+input,
+p {
+  margin-bottom: 15px;
+}
+
+.app-container>div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+
+.site-setting {
+  width: 40%;
+  position: relative;
+}
+
+.site-setting:hover {
+  animation: rotation 6s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.site-logo {
+  position: relative;
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  position: relative;
+  width: auto;
+  background: rgb(161, 229, 79);
+  padding: 0% 2%;
+  border: 5px solid rgb(0, 0, 0);
   box-sizing: border-box;
-  border-radius:30px;
+  border-radius: 30px;
+  border-style: ridge;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 100%;
+  padding-top: 1%;
 }
-input[type=text], input[type=password] {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border: 3px solid green;
+
+.logout {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background: rgb(182, 191, 197);
+  padding: 0% 2%;
+  border: 3px solid rgb(0, 0, 0);
   box-sizing: border-box;
-  border-radius:30px;
+  border-radius: 10px;
+  border-style: smooth;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: calc(0.2em + 1vw);
+  padding-top: 0%;
+  margin: 0px;
 }
+
+.share-button {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  position: relative;
+  width: 250px;
+  background: rgb(182, 191, 197);
+  padding: 0% 2%;
+  border: 3px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: smooth;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: calc(0.5em + 1vw);
+  padding-top: 0%;
+  margin-top: 10px
+}
+
+.mood-button {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  position: relative;
+  width: auto;
+  background: rgb(182, 191, 197);
+  padding: 0% 2%;
+  border: 3px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: smooth;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: calc(0.5em + 1vw);
+  padding-top: 0%;
+  margin: 0px;
+}
+
+
+.mood-button:hover {
+  background-color: rgb(101, 66, 134);
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: rgb(119, 167, 61);
+  transition: 0.3s;
+}
+
 .App {
   text-align: center;
 }
@@ -41,6 +200,14 @@ input[type=text], input[type=password] {
   }
 }
 
+.header-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: auto;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -52,6 +219,13 @@ input[type=text], input[type=password] {
   color: white;
 }
 
+.input-responsive {
+  width: 250px;
+  height: 30px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -60,6 +234,7 @@ input[type=text], input[type=password] {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -69,4 +244,104 @@ input[type=text], input[type=password] {
   width: 100%;
   height: 100%;
   background-color: gray;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(1900%);
+  }
+}
+
+.music-note {
+  top: 0;
+  z-index: 1;
+  left: 0;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url("https://cdn.discordapp.com/attachments/1080566050132865074/1166898705685807144/music-note-icon-34259.png?ex=654c2a1b&is=6539b51b&hm=b46a007212c9e2df82f9d2dc6564bc01232038e06dba2b3b43b8a065a5082b53&");
+  background-size: cover;
+  animation: move 8s linear infinite
+}
+
+.friends-list {
+  text-align: center;
+}
+
+.logo-h1 {
+  color: #adf542;
+  margin: 0px;
+}
+.mood-h2 {
+  color: #adf542;
+
+  text-align: center;
+  margin: 10px;
+}
+
+.input-center {
+  text-align: center;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.friends-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+}
+
+.friends-border {
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: #b293e4;
+}
+
+.logout-container {
+  width:100%; 
+}
+
+.recent-h2 {
+  text-align: center;
+  margin-top: 30px
+}
+
+.mood-selection {
+  height: 150px;
+}
+
+.PlayerNotLoaded {
+  text-align: center;
+  vertical-align: middle;
+  width: 500px;
+  height: 575px;
+  background-color: #b293e4;
+  border-radius: 10px;
+  display: table;
+  font-size: 500;
+
+}
+
+.p-player {
+  color: #adf542;
+  font-size: 30px;
+  font-weight: bold;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.p-friends {
+  margin-top: 25px;
+  font-size: 30px;
 }

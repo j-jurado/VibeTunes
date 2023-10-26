@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -10,12 +10,12 @@ function Login() {
         const hash = window.location.hash;
         let token = window.localStorage.getItem("token");
 
-        if(!token && hash) {
+        if (!token && hash) {
             token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1];
             window.location.hash = "";
             window.localStorage.setItem("token", token);
             setToken(token);
-        } else if(token) { navigate("/mood") }
+        } else if (token) { navigate("/mood") }
     }, [])
 
     const spotifyAuthLogin = () => {
@@ -30,9 +30,9 @@ function Login() {
             'playlist-modify-private'
         ]
 
-        const AUTH_LINK = 
-            AUTH_ENDPOINT + "?client_id=" + 
-            CLIENT_ID + "&redirect_uri=" +  
+        const AUTH_LINK =
+            AUTH_ENDPOINT + "?client_id=" +
+            CLIENT_ID + "&redirect_uri=" +
             REDIRECT_URI + "&response_type=token" +
             "&scope=" + PERMISSIONS.join('%20');
 
@@ -41,12 +41,15 @@ function Login() {
 
     return (
         <div className="home">
-            <h1>VibeTunes</h1>
-            <p>Home Page</p>
-            <button onClick={spotifyAuthLogin}>
-                Login With Spotify
-            </button>
+            <div className="home app-container">
+                <div class="site-logo"><img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163502858201747577/vibetunes_prev_ui.png?ex=653fcf7a&is=652d5a7a&hm=796cac0e96f6cb8ca866d9fb259a8bed5c67c82042191e5e08d1e65ae26e1036&" width="100%" alt="mainlogo"></img></div>
+                <button onClick={spotifyAuthLogin}>
+                    Login With Spotify
+                    <img src="https://cdn.discordapp.com/attachments/1080566050132865074/1163505951542890658/spotify_logo_prev_ui.png?ex=653fd25b&is=652d5d5b&hm=b034d7d543c35be5c7770a0988b51bfeee3c7a0d1ff40e53f4ca7f7d768a9b77&" width="35" height="35"></img>
+                </button>
+            </div>
         </div>
+
     );
 }
 
