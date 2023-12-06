@@ -274,6 +274,10 @@ function Mood() {
     if (validPlaylist) {
       document.getElementById('Player').src = document.getElementById('Player').src;
     }
+    setTimeout(setPlaylistLink, 1000);
+  }
+
+  async function setPlaylistLink() {
     setValidPlaylist(true);
   }
 
